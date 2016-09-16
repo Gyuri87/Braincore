@@ -29,7 +29,7 @@ try {
      */
     $di->set('url', function () {
         $url = new \Phalcon\Mvc\Url();
-        $url->setBaseUri('http://braincore2/');
+        $url->setBaseUri('http://braincore/');
         return $url;
     });
 
