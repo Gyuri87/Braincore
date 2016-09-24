@@ -2,6 +2,8 @@
 
 namespace Modules\Frontend;
 
+use Phalcon\Mvc\Collection\Manager;
+use MongoClient;
 use Phalcon\Loader;
 use Phalcon\Mvc\View;
 use Phalcon\DiInterface;
@@ -19,6 +21,8 @@ class Module
         $loader->registerNamespaces(array(
             'Modules\Frontend\Controllers' => __DIR__ . '/controllers/',
             'Modules\Frontend\Models' => __DIR__ . '/models/',
+            'Modules\BusinessLogic\Frontend' => 'modules/BusinessLogic/Frontend/',
+
         ));
 
         $loader->register();
@@ -62,5 +66,15 @@ class Module
                 "dbname" => $config->database->name
             ));
         };
+        $di->set('mongo', function () {
+            $mongo = new \MongoClient();
+            return $mongo->selectDB("braincore");
+        }, true);
+
+        //Register a collection manager
+        $di->set('collectionManager', function() {
+            return new Manager();
+
+        });
     }
 }
