@@ -20,9 +20,9 @@ class Module
 
         $loader->registerNamespaces(array(
             'Modules\Frontend\Controllers' => __DIR__ . '/controllers/',
-            'Modules\Frontend\Models' => __DIR__ . '/models/',
+            'Modules\BusinessLogic\Models' => 'modules/BusinessLogic/models/',
             'Modules\BusinessLogic\Frontend' => 'modules/BusinessLogic/Frontend/',
-
+            'Modules\BusinessLogic\ContentSettings' => 'modules/BusinessLogic/ContentSettings/',
         ));
 
         $loader->register();
