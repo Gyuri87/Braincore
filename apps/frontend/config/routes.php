@@ -17,5 +17,11 @@ return array(
         'controller'    => 1,
         'action'        => 2,
         'params'        =>3
+    ),
+    '/:params'=> array(
+        'module'        => 'frontend',
+        'controller'    => 'index',
+        'action'        => 'index',
+        'params'        => 1
     )
 );
