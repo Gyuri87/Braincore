@@ -10,6 +10,6 @@ class ControllerBase extends Controller
 {
     public function initialize()
     {
-        $this->view->menu = Frontend\MenuBar::createMenu();
+        
     }
 }
